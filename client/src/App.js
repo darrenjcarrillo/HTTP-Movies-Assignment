@@ -6,7 +6,7 @@ import Movie from "./Movies/Movie";
 import UpdateMovie from "./Movies/UpdateMovie";
 const App = () => {
   const [savedList, setSavedList] = useState([]);
-  const [updateMovie, setUpdateMovie] = useState();
+  const [updateMovie, setUpdateMovie] = useState([]);
 
   useEffect(() => {
     console.log("In useEffect in App.js", updateMovie);

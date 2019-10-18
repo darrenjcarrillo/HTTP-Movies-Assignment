@@ -44,13 +44,13 @@ const UpdateMovie = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const newMovie = {
-      ...movie,
-      stars: movie.stars.split(",")
-    };
+    // const newMovie = {
+    //   ...movie,
+    //   stars: movie.stars.split(",")
+    // };
 
     axios
-      .put(`http://localhost:5000/api/movies/${movie.id}`, newMovie)
+      .put(`http://localhost:5000/api/movies/${movie.id}`, movie)
       .then(res => {
         props.setUpdate(res.data);
         props.history.push(`/movies${props.match.params.id}`);
