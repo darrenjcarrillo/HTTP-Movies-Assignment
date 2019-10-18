@@ -12,12 +12,11 @@ import axios from "axios";
 const UpdateMovie = props => {
   console.log(`THIS IS PROPS UPDATEMOVIE`, props);
   const [movie, setMovie] = useState({
-    // id: Number(props.match.params.id),
-    // title: "",
-    // director: "",
-    // metascore: "",
-    // stars: ""
-    ...props.update
+    id: Number(props.match.params.id),
+    title: "",
+    director: "",
+    metascore: "",
+    stars: ""
   });
   // console.log(`this is movie`, movie);
 
@@ -44,11 +43,6 @@ const UpdateMovie = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // const newMovie = {
-    //   ...movie,
-    //   stars: movie.stars.split(",")
-    // };
-
     axios
       .put(`http://localhost:5000/api/movies/${movie.id}`, movie)
       .then(res => {
